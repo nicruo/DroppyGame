@@ -5,11 +5,16 @@ using UnityEngine;
 public class PlayerControl : MonoBehaviour {
 
     private Rigidbody body;
-
+    private float startX = 0;
     public float force = 13;
 
 	// Use this for initialization
 	void Start () {
+
+        startX = Random.Range(-3f, 3f);
+
+        transform.position = new Vector3(startX, transform.position.y, transform.position.z);
+
         body = GetComponent<Rigidbody>();
 
         body.useGravity = false;
