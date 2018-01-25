@@ -35,4 +35,12 @@ public class PlayerControl : MonoBehaviour {
         //body.AddForce(new Vector3(horizontal * force, vertical * force, 0));
         body.AddForce(new Vector3(horizontal*force,0,0));
 	}
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("Enemy"))
+        {
+            transform.localScale *= 3f;
+        }
+    }
 }
